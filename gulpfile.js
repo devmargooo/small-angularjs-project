@@ -47,20 +47,8 @@ gulp.task('pug', function() {
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'dev/js-modules/*.js'
+        'dev/js-modules/*.*'
     ])
-        .pipe(size({
-            showFiles: true
-        }))
-        .pipe(concat('main.min.js'))
-        .pipe(uglify())
-        .pipe(size({
-            showFiles: true
-        }))
-        .pipe(size({
-            showFiles: true,
-            gzip: true
-        }))
         .pipe(gulp.dest('build/js'))
 });
 
@@ -123,21 +111,15 @@ gulp.task('sass', function(){
 
 
 
-gulp.task('watch', ['sass', 'scripts', 'pug'], function () {
+gulp.task('watch', ['sass', 'scripts'], function () {
     gulp.watch('dev/sass/**/*.scss', ['sass']);
     gulp.watch('dev/js-modules/*.js', ['scripts']);
-    gulp.watch('dev/templates/*.pug', ['pug']);
     gulp.watch('build/*.html', browserSync.reload);
 });
 
 
-gulp.task('build', ['sass', 'scripts', 'pug', 'svgSprite'], function() {
+gulp.task('build', ['sass', 'scripts'], function() {
 
-    gulp.src('dev/fonts/**/*')
-        .pipe(gulp.dest('build/fonts'));
-
-    gulp.src('dev/img-src/*.*')
-        .pipe(gulp.dest('build/img'));
 
 });
 
