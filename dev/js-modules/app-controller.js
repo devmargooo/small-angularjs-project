@@ -1,8 +1,8 @@
 angular.module('app')
-    .controller('AppController', ['$http', function ($http) {
+    .controller('AppController', ['$http', '$scope', function ($http, $scope) {
         let self = this;
         self.data = undefined;
-        self.sliderImgs = null;
+        $scope.sliderImgs = null;
         let popup = document.querySelector('.popup');
 
         self.capitalizeFirstLetter = function (string) {
@@ -10,16 +10,16 @@ angular.module('app')
         };
 
         self.showSlider = function (imgs) {
-            self.sliderImgs = imgs;
+            $scope.sliderImgs = imgs;
         };
 
-        self.hideSlider = function () {
-            self.sliderImgs = null;
+        $scope.hideSlider = function () {
+            $scope.sliderImgs = null;
         };
 
         self.keydownListener = function (e) {
             if( e.keyCode === 27 ) {
-                self.hideSlider();
+                $scope.hideSlider();
             }
         };
 

@@ -59,6 +59,13 @@ gulp.task('html', function () {
         .pipe(gulp.dest('build'))
 });
 
+gulp.task('img', function () {
+    gulp.src([
+        'dev/img/*.*'
+    ])
+        .pipe(gulp.dest('build/img'))
+});
+
 gulp.task('templates', function () {
     gulp.src([
         'dev/templates/**/*.html'
@@ -125,20 +132,21 @@ gulp.task('sass', function(){
 
 
 
-gulp.task('watch', ['sass', 'scripts', 'html', 'templates'], function () {
+gulp.task('watch', ['sass', 'scripts', 'html', 'templates', 'img'], function () {
     gulp.watch('dev/sass/**/*.scss', ['sass']);
     gulp.watch('dev/js-modules/*.js', ['scripts']);
     gulp.watch('dev/*.html', ['html']);
     gulp.watch('dev/templates/**/*.html', ['templates']);
+    gulp.watch('dev/img/*.*', ['img']);
     gulp.watch('build/*.html', browserSync.reload);
 });
 
 
-gulp.task('build', ['sass', 'scripts', 'html', 'templates'], function() {
+gulp.task('build', ['sass', 'scripts', 'html', 'templates', 'img'], function() {
 
 
 });
 
 
-gulp.task('default', ['watch', 'build', 'html', 'browser-sync']);
+gulp.task('default', ['watch', 'build', 'browser-sync']);
 

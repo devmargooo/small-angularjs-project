@@ -1,12 +1,18 @@
 angular.module('app')
     .controller('SliderController', ['$scope', function ($scope) {
-        console.log($scope.data);
 
-        $scope.myInterval = 115000;
+        $scope.myInterval = 5000;
         $scope.noWrapSlides = false;
         $scope.active = 0;
         let slides = $scope.slides = [];
         let currIndex = 0;
+
+        $scope.closePopup = function (e) {
+            let target = e.target;
+            if (target.classList.contains("popup") || target.classList.contains("popup__close")){
+                $scope.$parent.hideSlider();
+            }
+        };
 
         $scope.addSlide = function(src) {
             slides.push({
