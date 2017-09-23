@@ -5,6 +5,9 @@
                 <img class="slide__img" ng-src="{{slide.image}}">
             </slide>
         </carousel>
-        <img class="popup__close" src="img/close.png">
+        <picture>
+            <source srcset="img/close-white.svg" media="(max-width: 767px)">
+            <img class="popup__close" src="img/close-black.svg">
+        </picture>
     </div>
 </section>

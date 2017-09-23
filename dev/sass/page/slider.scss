@@ -1,5 +1,7 @@
 .popup{
   width:100%;
+  max-width: 300rem;
+  margin: 0 auto;
   min-height:100%;
   background-color: rgba(0,0,0,0.7);
   overflow:hidden;
@@ -9,15 +11,19 @@
 .popup__content{
   position: relative;
   width: 50%;
-  height: 25rem;
+  max-width: 60rem;
   margin: 5rem auto 0;
   background: $c-bg-primary;
+
+  @media (min-width: $large) {
+    margin-top: 10rem;
+  }
 }
 
 .popup__close{
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: -3rem;
+  right: -5rem;
   width: 4rem;
   height: 4rem;
   cursor: pointer;
@@ -26,10 +32,19 @@
   &:hover{
     transform: scale(1.1);
   }
+
+  @media (min-width: $tablet) {
+    top: 1rem;
+    right: 1rem;
+  }
 }
 
 .slide{
-  height: 25rem;
+  height: 16rem;
+  @media (min-width: $tablet) {
+    height: 25rem;
+  }
+
 }
 
 .slide__img{
