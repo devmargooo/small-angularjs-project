@@ -52,6 +52,20 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('build/js'))
 });
 
+gulp.task('html', function () {
+    gulp.src([
+        'dev/*.html'
+    ])
+        .pipe(gulp.dest('build'))
+});
+
+gulp.task('templates', function () {
+    gulp.src([
+        'dev/templates/**/*.html'
+    ])
+        .pipe(gulp.dest('build/templates'))
+});
+
 gulp.task('svgSprite', function () {
     return gulp.src('dev/icons-svg/*.svg')
         .pipe($.svgSprite({
@@ -111,18 +125,20 @@ gulp.task('sass', function(){
 
 
 
-gulp.task('watch', ['sass', 'scripts'], function () {
+gulp.task('watch', ['sass', 'scripts', 'html', 'templates'], function () {
     gulp.watch('dev/sass/**/*.scss', ['sass']);
     gulp.watch('dev/js-modules/*.js', ['scripts']);
+    gulp.watch('dev/*.html', ['html']);
+    gulp.watch('dev/templates/**/*.html', ['templates']);
     gulp.watch('build/*.html', browserSync.reload);
 });
 
 
-gulp.task('build', ['sass', 'scripts'], function() {
+gulp.task('build', ['sass', 'scripts', 'html', 'templates'], function() {
 
 
 });
 
 
-gulp.task('default', ['watch', 'build', 'browser-sync']);
+gulp.task('default', ['watch', 'build', 'html', 'browser-sync']);
 

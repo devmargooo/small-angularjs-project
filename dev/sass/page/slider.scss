@@ -1,0 +1,31 @@
+.popup{
+  width:100%;
+  min-height:100%;
+  background-color: rgba(0,0,0,0.7);
+  overflow:hidden;
+  position:fixed;
+  top:0;
+}
+.popup__content{
+  width: 50%;
+  height: 25rem;
+  margin: 5rem auto 0;
+  background: $c-bg-primary;
+}
+
+.slide{
+  height: 25rem;
+}
+
+.slide__img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
+
+.carousel-control.left,
+.carousel-control.right{
+  background-image: none!important;
+}

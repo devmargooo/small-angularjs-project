@@ -1,0 +1,9 @@
+<section class="popup">
+    <div class="popup__content">
+        <carousel interval="myInterval">
+            <slide class="slide" ng-repeat="slide in slides" active="slide.active">
+                <img class="slide__img" ng-src="{{slide.image}}">
+            </slide>
+        </carousel>
+    </div>
+</section>
