@@ -3,7 +3,6 @@ angular.module('app')
         let self = this;
         self.data = undefined;
         $scope.sliderImgs = null;
-        let popup = document.querySelector('.popup');
 
         self.capitalizeFirstLetter = function (string) {
             return string.charAt(0).toUpperCase() + string.slice(1);

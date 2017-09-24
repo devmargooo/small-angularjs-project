@@ -11,6 +11,9 @@
   @media (min-width: $desktop) {
     padding: 2rem;
   }
+  @media (min-width: $large) {
+    max-width: 160rem;
+  }
 }
 
 .product{
@@ -26,7 +29,9 @@
   padding: 1.5rem;
   font-family: Verdana, sans-serif;
   color: $c-primary;
-  word-break: break-all;
+  @media (min-width: $large) {
+    width: $product-width-large;
+  }
 }
 
 .product__img{
@@ -46,16 +51,38 @@
   margin-bottom: 0.5rem;
   font-size: 0.9rem;
   font-weight: 300;
+
+  @media (min-width: $desktop) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: $large) {
+    font-size: 1.7rem;
+  }
 }
 
 .product__name{
   margin-bottom: 0.8rem;
   font-size: 1.3rem;
+
+  @media (min-width: $desktop) {
+    font-size: 1.7rem;
+  }
+  @media (min-width: $large) {
+    margin-bottom: 1.5rem;
+    font-size: 2.3rem;
+  }
 }
 
 .product__price{
   font-size: 1.4rem;
   line-height: 1;
+
+  @media (min-width: $desktop) {
+    font-size: 1.9rem;
+  }
+  @media (min-width: $large) {
+    font-size: 2.3rem;
+  }
 }
 
 .product__price-wrapper{
@@ -70,10 +97,24 @@
   font-weight: 300;
   text-decoration: line-through;
   line-height: 1;
+
+  @media (min-width: $desktop) {
+    font-size: 1.5rem;
+  }
+  @media (min-width: $large) {
+    font-size: 1.8rem;
+  }
 }
 
 .product__new-price{
   font-size: 1.3rem;
   color: $c-accent;
   line-height: 1;
+
+  @media (min-width: $desktop) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: $large) {
+    font-size: 2.1rem;
+  }
 }
